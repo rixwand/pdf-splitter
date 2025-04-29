@@ -5,7 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node ./src/index.ts"
+    "start": "ts-node ./src/index.ts",
+    "build": "tsc",
+    "compile-linux": "pkg . --target node18-linux-x64",
+    "compile-win": "pkg . --target node18-win-x64"
+  },
+  "bin": "dist/index.js",
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "assets": []
   },
   "keywords": [],
   "author": "",
@@ -13,6 +21,7 @@
   "type": "commonjs",
   "dependencies": {
     "@types/node": "^22.15.2",
+    "inquirer": "^12.6.0",
     "pdf-lib": "^1.17.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
