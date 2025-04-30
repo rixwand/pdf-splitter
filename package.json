@@ -1,5 +1,5 @@
 {
-  "name": "docx-to-pdf",
+  "name": "pdf-splitter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node ./src/index.ts",
     "build": "tsc",
-    "compile-linux": "pkg . --target node18-linux-x64",
-    "compile-win": "pkg . --target node18-win-x64"
+    "compile-linux": "pkg . --target node18-linux-x64 --out-dir compiled",
+    "compile-win": "pkg . --target node18-win-x64 --out-dir compiled"
   },
   "bin": "dist/index.js",
   "pkg": {
