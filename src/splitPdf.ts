@@ -14,6 +14,10 @@ export default async function splitPdf({
   outputPath,
 }: splitPdfProps) {
   const prompt = createPromptModule();
+  const dirname = path.dirname(process.execPath);
+  pdfPath = path.join(dirname, pdfPath);
+  xlsxPath = path.join(dirname, xlsxPath);
+  outputPath = path.join(dirname, outputPath);
   try {
     const existingPdfBytes = fs.readFileSync(pdfPath);
     const pdfDoc = await PDFDocument.load(existingPdfBytes);

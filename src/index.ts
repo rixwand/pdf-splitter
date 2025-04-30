@@ -1,10 +1,18 @@
 import splitPdf from "./splitPdf";
-import prompt from "./prompt";
+import params from "./params";
 
 async function main() {
   try {
-    const answer = await prompt();
-    await splitPdf(answer);
+    const {
+      outDir: outputPath,
+      pdfFile: pdfPath,
+      xlsxFile: xlsxPath,
+    } = params();
+    await splitPdf({
+      outputPath,
+      pdfPath,
+      xlsxPath,
+    });
   } catch (err) {
     const error = err as Error;
     console.log(error.message);

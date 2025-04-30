@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node ./src/index.ts",
-    "build": "tsc",
-    "compile-linux": "pkg . --target node18-linux-x64 --out-dir compiled",
-    "compile-win": "pkg . --target node18-win-x64 --out-dir compiled"
+    "compile-linux": "tsc && pkg . --target node18-linux-x64 --out-dir compiled",
+    "compile-win": "tsc && pkg . --target node18-win-x64 --out-dir compiled"
   },
   "bin": "dist/index.js",
   "pkg": {
@@ -21,6 +20,7 @@
   "type": "commonjs",
   "dependencies": {
     "@types/node": "^22.15.2",
+    "commander": "^13.1.0",
     "inquirer": "^12.6.0",
     "pdf-lib": "^1.17.1",
     "ts-node": "^10.9.2",
